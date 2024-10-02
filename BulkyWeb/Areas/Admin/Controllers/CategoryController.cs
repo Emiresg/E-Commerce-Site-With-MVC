@@ -48,10 +48,10 @@ namespace BulkyWeb.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            Category? cateoryFromDb = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
+            Category? categoryFromDb = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
             //Category? cateoryFromDb = _db.Categories.FirstOrDefault(u => u.Id == id);
-            if (cateoryFromDb == null) { return NotFound(); }
-            return View(cateoryFromDb);
+            if (categoryFromDb == null) { return NotFound(); }
+            return View(categoryFromDb);
         }
 
         [HttpPost]
@@ -74,10 +74,10 @@ namespace BulkyWeb.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            Category? cateoryFromDb = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
+            Category? categoryFromDb = _unitOfWork.Category.GetFirstOrDefault(u => u.Id == id);
             //Category? cateoryFromDb = _db.Categories.FirstOrDefault(u => u.Id == id);
-            if (cateoryFromDb == null) { return NotFound(); }
-            return View(cateoryFromDb);
+            if (categoryFromDb == null) { return NotFound(); }
+            return View(categoryFromDb);
         }
 
         [HttpPost, ActionName("Delete")]
