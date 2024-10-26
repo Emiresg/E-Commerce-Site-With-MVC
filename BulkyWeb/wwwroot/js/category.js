@@ -6,7 +6,7 @@ function loadDataTable() {
     console.log("Loading DataTable...");
     dataTable = $("#tblData").DataTable({
         ajax: {
-            url: "/admin/company/getall",
+            url: "/admin/category/getall",
             type: "GET",
             datatype: "json",
             error: function (jqXHR, textStatus, errorThrown) {
@@ -14,21 +14,17 @@ function loadDataTable() {
             }
         },
         columns: [
-            { data: "name", width: "20%" },
-            { data: "streetAddress", width: "15%" },
-            { data: "city", width: "10%" },
-            { data: "state", width: "15%" },
-            { data: "postalCode", width: "15%" },
-            { data: "phoneNumber", width: "15%" },
+            { data: "name", width: "30%" },
+            { data: "displayOrder", width: "30%" },
             {
                 data: "id",
                 render: function (data) {
                     return `<div class="w-75 btn-group" role="group">
-                                <a href="/admin/company/upsert?id=${data}" class="btn btn-primary mx-1"> <i class="bi bi-pencil-square p-1"></i>Edit</a>
-                                <a onClick=Delete('/admin/company/delete/${data}') class="btn btn-danger mx-1"> <i class="bi bi-trash p-1"></i>Delete</a>
+                                <a href="/admin/category/upsert?id=${data}" class="btn btn-primary mx-1"> <i class="bi bi-pencil-square p-1"></i>Edit</a>
+                                <a onClick=Delete('/admin/category/delete/${data}') class="btn btn-danger mx-1"> <i class="bi bi-trash p-1"></i>Delete</a>
                             </div>`;
                 },
-                width: "15%",
+                width: "40%",
             },
         ],
         error: function (xhr, error, code) {

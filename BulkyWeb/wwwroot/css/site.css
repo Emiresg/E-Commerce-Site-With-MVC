@@ -563,3 +563,13 @@ bg-success {
         background-color: #578553;
         border-color: #578553;
     }
+
+#tblData {
+    width: 100%; /* Ensure the table takes up the full width */
+    table-layout: fixed; /* Ensures columns use the widths as defined */
+}
+
+    #tblData th, #tblData td {
+        text-align: center; /* Ensures text is centered in both headers and cells */
+        vertical-align: middle;
+    }
